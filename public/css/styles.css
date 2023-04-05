@@ -1,0 +1,169 @@
+html {
+    min-height: 100%;
+    position: relative;
+}
+.container-fluid {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+.navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: large;
+    letter-spacing: 5px;
+}
+.navbar-nav li a:hover {
+    color: #1abc9c !important;
+}
+.footer-padding {
+    padding-bottom: 100px;
+}
+.footer {
+    position: absolute;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #1abc9c;
+}
+.footer p {
+    margin-top: 15px;
+    font-size: 18px;
+    color: #fff;
+}
+
+
+
+body {
+    background-color: #E8ECEF;
+}
+.centered {
+    padding-top: 200px;
+    text-align: center;
+}
+.secret-text {
+    text-align: center;
+    font-size: 2rem;
+    /* color:#1abc9c; */
+    color: #fff;
+    background-color: #000;
+}
+  
+
+
+
+
+.createTicket {
+    /* font-size: x-large; */
+    /* font-weight: bold; */
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.createTicket span {
+    float: right;
+    margin-left: 50px;
+    margin-top: 10px;
+    margin-right: 20px;
+}
+.dashboard {
+    font-size: xx-large;
+    text-align: center;
+    background-color: grey;
+}
+.dashboard table th  {
+    /* padding-top: 50px!important;
+    padding-left: 20px!important; */
+    text-align: center;
+}
+.dashboard .count {
+    padding: 5%;
+}
+.viewticket {
+    background: white;
+}
+.viewticket .comments {
+    font-size: small;
+}
+.viewticket table tr :hover {
+    background: wheat;
+}
+
+.ticket {}
+.ticket .summary {
+    margin-bottom: 12px;
+    font-size: xx-large;
+}
+.ticket .details {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: normal;
+    font-size: medium;
+}
+.ticketContent {
+    margin-top: 20px;;
+    font-size: medium;
+}
+.ticket table tr :hover {
+    background: wheat;
+}
+.ticketContentTags {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: small;
+}
+.ticketTitle {
+    margin-top: 12px;
+    margin-bottom: 12px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-size: xx-large;
+}
+.ticketTitle .starRating {
+    color: orange;
+    margin: 0px;
+    float: none !important;
+}
+div .ticketHeader {
+    margin-bottom: 20px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+  
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+  
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+  
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

@@ -1,0 +1,73 @@
+<%- include('partials/header'); -%>
+
+<div class="container mt-5">
+  <h1>Login</h1>
+
+  <!-- <% if (messages.failureFlash0) { %> -->
+    <div class="">
+        <!-- <%= messages %> -->
+    </div>
+  <!-- <% } %> -->
+
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="card">
+        <div class="card-body">
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" name="username" value="" required>
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" name="password" value="" required>
+            </div>
+            <div class="col-sm-2">
+              <form action="/login" method="POST">
+                <button type="submit" class="btn btn-primary">Sign In</button>
+              </form>
+            </div>
+            <div class="col-sm-3">
+              <form action="/register" method="GET">
+                <button type="submit" class="btn btn-block btn-social btn-google ">Sign Up</button>
+              </form>
+            </div>
+            <div class="col-sm-5">
+              <form action="/auth/google" method="GET">
+                <button type="submit" class="btn btn-block btn-social btn-google ">
+                  <i class="fab fa-google"></i>Sign In with Google
+                </button>
+              </form>
+            </div>
+  
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="col-sm-4">
+        <div class="card">
+          <div class="card-body">
+            <a class="btn btn-block btn-social btn-google" href="/auth/google" role="button">
+              <i class="fab fa-google"></i>
+              Sign In with Google
+            </a>
+          </div>
+        </div>
+      </div> -->
+
+      <br/><br/>
+
+      <!-- <div class="col-sm-4">
+        <div class="card">
+          <div class="card-body">
+            <a class="btn btn-block btn-social btn-google" href="/register" role="button">
+                Sign Up
+            </a>
+          </div>
+        </div>
+      </div> -->
+
+    </div>
+</div>
+
+<%- include('partials/footer'); -%>

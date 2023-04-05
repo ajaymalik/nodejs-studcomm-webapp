@@ -1,0 +1,127 @@
+<%- include('partials/header'); -%>
+<br/>
+<a href="/mytickets"> << Back</a><br/><br/>
+
+<% tickets.forEach(function(ticket) { %>
+
+    <% if (ticket.summary === '') { %>
+        <div class="blogTitle">No data found!</div>
+    <% } else { %>
+
+        <!-- <br/><br/> -->
+        <!-- <div style="float: right;">
+            <form action="/mytickets/<%= ticket._id %>/delete" method="post">
+                <button type="submit" class="btn btn-primary">Purge</button>
+            </form>
+        </div> -->
+
+        <div class="blogTitle blogHeader">
+            <h3><%= ticket.summary %></h3>
+        </div>
+        <div style="float: right;">
+            <button type="submit" class="btn btn-primary" onclick="modal.style.display = 'block'; ">Add Comment</button>
+        </div>
+        <br/>
+        <div>
+            <span>Raised by <b><%= ticket.owner %></b> on </span>
+            <span><b><%= ticket.created %></b></span>
+        </div>
+        <br/>
+        <pre>
+            <div class="blogContent">
+                <%= ticket.details; %>
+            </div>
+        </pre>
+        <div class="blogContentTags">
+            <div>
+                Public: 
+                <% if(ticket.public === 'no') { %>
+                    No
+                <% } else { %>
+                    Yes
+                <% } %>
+            </div>
+            <div>
+                Category: 
+                <% if(ticket.category === null || ticket.category === '') { %>
+                    No category defined!
+                <% } else { %>
+                    <%= ticket.category %>
+                <% } %>
+            </div>
+            <div>
+                Department: <%= ticket.department %>
+            </div>
+            <div>
+                Tags: 
+                <% if(ticket.tags === null) { %>
+                    No tags!
+                <% } else { %>
+                    <%= ticket.tags %>
+                <% } %>
+            </div>
+        </div>
+        <h3>Comments and updates</h3>
+        <% if(ticket.comments !== null) { %>
+            <div class="viewticket">
+            <table class="table">
+                <tbody>
+                    <% ticket.comments.forEach(function(comment) { %>
+                        <tr><td>
+                            <div class="comments">
+                                <div><%= comment.text %></div>
+                                <br/>
+                                <div>Commenter: <%= comment.whoName %></div>
+                                <div>Time: <%= comment.when %></div>
+                                <div>Status: <%= comment.status %></div>
+                            </div>
+                        </td></tr>
+                    <% });%>
+                </tbody>
+            </table>
+            </div>
+            <% } %>
+        
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <p>
+                <form action="/mytickets/<%= ticket._id %>/addcomment" method="post">
+                    <div class="form-group">
+                        <label for="addcomment">Add comment with clarification and/or followup questions</label>
+                        <textarea name="addcomment" cols="35" rows="5" class="form-control" placeholder="Type here and click Submit" required></textarea>
+                    </div>
+                    <button type="submit" name="button" id="addcommentBtn" class="btn btn-primary">Post Comment</button>
+              </form>
+            </p>
+        </div>
+        </div>
+
+        <script type="application/javascript">
+            var modal = document.getElementById("myModal");
+            var btn = document.getElementById("addcommentBtn");
+            var span = document.getElementsByClassName("close")[0];
+
+            // When the user clicks on the button, open the modal
+            btn.onclick = function() {
+                modal.style.display = "block";
+            };
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function() {
+                modal.style.display = "none";
+            };
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+    <% } %>
+
+<% }); %>
+
+<%- include('partials/footer'); -%>

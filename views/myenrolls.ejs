@@ -1,0 +1,28 @@
+<%- include('partials/header'); -%>
+
+<h1>Enrollments</h1>
+
+<div class="alert alert-success fade in alert-dismissible" style="margin-top: 20px; font-size: larger;">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">&times;</a>
+    <strong><%= displaySomeMessage %></strong>
+</div>
+
+<div class="ticket">
+<table class="table table-striped table-borderless">
+<tbody>
+    
+    <% if (myenrolls !== null && myenrolls.length !== 0) { %>
+    <% myenrolls.forEach(function(element) { %>
+        <tr><td>
+            <div class="ticketTitle">
+                <%= element.title %>
+            </div>
+        </td></tr>
+    <% }); %>
+    <% } %>
+
+</tbody>
+</table>
+</div>
+
+<%- include('partials/footer'); -%>

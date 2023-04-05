@@ -1,0 +1,28 @@
+<%- include('partials/header'); -%>
+
+<h1>Welcome</h1>
+
+<div class="dashboard">
+
+    <table class="table table-borderless">
+        <tbody>
+            <tr>
+                <th rowspan="5">
+                    M<br/>Y<br/><br/>T<br/>I<br/>C<br/>K<br/>E<br/>T<br/>S
+                </th>
+            </tr>
+            <tr><td>
+                <div class="count">Open / In-progress: <%= ticketscount %></div>
+            </td></tr>
+            <tr><td>
+                <div class="count">Pending My Action: <%= pendingcount %></div>
+            </td></tr>
+            <tr><td>
+                <div class="count">Resolved: <%= resolvedcount %></div>
+            </td></tr>
+        </tbody>
+    </table>
+
+</div>
+
+<%- include('partials/footer'); -%>
